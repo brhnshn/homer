@@ -35,6 +35,7 @@ Available services are located in `src/components/`:
 - [Matrix](#matrix)
 - [Mealie](#mealie)
 - [Medusa](#medusa)
+- [Memos](#memos)
 - [Miniflux](#miniflux)
 - [NetAlertx](#netalertx)
 - [Nextcloud](#nextcloud)
@@ -463,6 +464,25 @@ Displays News (gray), Warning (orange) or Error (red) notifications bubbles from
 The url must be the root url of Medusa application.
 
 **API Key**: The Medusa API key can be found in General configuration > Interface. It is needed to access Medusa API.
+
+## Memos
+
+Displays [Memos](https://usememos.com/) note count, version, and online/offline status.
+
+```yaml
+- name: "Memos"
+  type: "Memos"
+  logo: "assets/tools/sample.png"
+  url: https://my-memos.url
+  # token: "your-access-token"          # Optional: Access token if authentication is required
+  # user: "1"                          # Optional: User ID (or parent 'users/1') to query personal memos
+  # filter: "visibilities == ['PUBLIC']" # Optional: AIP-160 filter for memos query
+  # hide: ["version"]                   # Optional: hide metrics ('memos', 'version')
+```
+
+Auto refresh is supported by this integration.
+
+**Access Token**: If your instance is private or you want to include private memos, generate an Access Token in your Memos instance under `Settings -> Access Tokens`.
 
 ## Miniflux
 
